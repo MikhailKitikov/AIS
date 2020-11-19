@@ -199,7 +199,9 @@ class Akinator:
 		self.gui_components['ANSWER_BUTTON'].place(x=320, y=200)		
 		self.gui_components['TEXT'].configure(text=self.questions[curr_target_feature], width=720)
 		self.gui_components['TEXT'].pack(anchor='n', fill='x')
-		self.gui_components['CHOICE_COMBOBOX']['values'] = self.predict_count(curr_target_feature, self.feature_values[curr_target_feature])
+
+		pred_counts = self.predict_count(curr_target_feature, self.feature_values[curr_target_feature])
+		self.gui_components['CHOICE_COMBOBOX']['values'] = pred_counts
 		self.gui_components['CHOICE_COMBOBOX'].current(0)		
 		self.gui_components['CHOICE_COMBOBOX'].place(x=150, y=210)
 		self.gui_components['CONTEXT_LISTBOX'].configure(width=20, height=21)
@@ -213,17 +215,15 @@ class Akinator:
 
 		# receive selected answer from listbox
 		answer = self.gui_components['CHOICE_COMBOBOX'].get()
-		if '(' in answer:
-			answer = answer[:answer.rfind('(') - 1]
+
+		pred_count = int(answer[answer.rfind('('):][1:-1])
+		answer = answer[:answer.rfind('(') - 1]
 
 		# get curr target and rule number (available when first item != init target)
 		curr_target = self.target_stack[-1][0]
 		curr_rule_ind = self.target_stack[-1][1]
 
 		# if all ways can go only to nothing, end game
-		pred = self.predict_count(curr_target, [answer])
-		pred_count = pred[0][pred[0].rfind('('):]
-		pred_count = int(pred_count[1:-1])
 		if pred_count == 0:
 			self.report_defeat()
 			return
@@ -235,7 +235,7 @@ class Akinator:
 		self.context.append((curr_target, answer))
 		self.gui_components['CONTEXT_LISTBOX'].insert(0, '{}: {}'.format(curr_target, answer))
 		self.gui_components['CONTEXT_LISTBOX'].place(x=720-200, y=30)
-		vals = self.gui_components['CONTEXT_LISTBOX']. tk.END)
+		vals = self.gui_components['CONTEXT_LISTBOX'].get(0, tk.END)
 		self.gui_components['CONTEXT_LISTBOX'].delete(0, tk.END)
 		self.gui_components['CONTEXT_LISTBOX'].insert(tk.END, *vals)
 
