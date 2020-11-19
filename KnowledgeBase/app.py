@@ -25,7 +25,7 @@ if __name__ == '__main__':
 	font_family = "Helvetica"
 
 	gui_components = {
-		'TEXT':					tk.Message(window, width = 350, font=(font_family, 14)), 
+		'TEXT':				tk.Message(window, width = 350, font=(font_family, 14)), 
 		'START_BUTTON': 		tk.Button(window, text="Start", font=(font_family, 12), width=10), 
 		'PHOTO_PANEL': 			tk.Label(window, width=100, height=100),
 		'ANSWER_BUTTON': 		tk.Button(window, text="Ok", font=(font_family, 12), width=10), 
