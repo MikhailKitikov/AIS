@@ -75,8 +75,8 @@ class Akinator:
 	Clears gui
 	'''
 	def clear_gui(self):		
-		for w in self.gui_components:
-			self.gui_components[w].place_forget()
+		for component in self.gui_components:
+			self.gui_components[component].place_forget()
 
 
 	'''
@@ -86,7 +86,7 @@ class Akinator:
 		self.clear_gui()
 		self.gui_components['CONTEXT_LISTBOX'].configure(width=20, height=21)
 		self.gui_components['CONTEXT_LISTBOX'].place(x=720-200, y=30)
-		self.gui_components['CONTEXT_LISTBOX'].delete(0, 'end')
+		self.gui_components['CONTEXT_LISTBOX'].delete(0, tk.END)
 		self.main_loop()
 
 
@@ -151,7 +151,7 @@ class Akinator:
 				# update listbox
 				self.gui_components['CONTEXT_LISTBOX'].insert(-1, '{}: {}'.format(*curr_rule.result))
 				self.gui_components['CONTEXT_LISTBOX'].place(x=720-200, y=30)
-				vals = self.gui_components['CONTEXT_LISTBOX'].get(0,tk.END)
+				vals = self.gui_components['CONTEXT_LISTBOX'].get(0, tk.END)
 				self.gui_components['CONTEXT_LISTBOX'].delete(0, tk.END)
 				self.gui_components['CONTEXT_LISTBOX'].insert(tk.END, *vals)
 
@@ -235,7 +235,7 @@ class Akinator:
 		self.context.append((curr_target, answer))
 		self.gui_components['CONTEXT_LISTBOX'].insert(0, '{}: {}'.format(curr_target, answer))
 		self.gui_components['CONTEXT_LISTBOX'].place(x=720-200, y=30)
-		vals = self.gui_components['CONTEXT_LISTBOX'].get(0,tk.END)
+		vals = self.gui_components['CONTEXT_LISTBOX']. tk.END)
 		self.gui_components['CONTEXT_LISTBOX'].delete(0, tk.END)
 		self.gui_components['CONTEXT_LISTBOX'].insert(tk.END, *vals)
 
