@@ -1,0 +1,59 @@
+{	
+	"feature_values":
+	{
+		"name": ["George Washington", "John Adams", "Thomas Jefferson", "James Madison", "James Monroe", "John Quincy Adams", "Andrew Jackson", "William Harrison", "James Polk", "Abraham Lincoln", "James Garfield", "Grover Cleveland", "Theodore Roosevelt", "Woodrow Wilson", "Franklin Roosevelt", "Harry Truman", "Dwight Eisenhower", "John Kennedy", "Lyndon Johnson", "George Bush I", "Bill Clinton", "George Bush II", "Barack Obama", "Donald Trump"],
+		"is_tall": ["True", "False"],
+		"religion": ["episcopalian", "presbyterian", "other"],
+		"killed": ["True", "False"],
+		"period": ["before_1850", "before_1900", "before_1950", "before_2000", "before_2050"],
+		"party": ["other", "democratic", "republican"],
+		"rate": ["5", "3", "4"]
+	},
+
+	"questions":
+	{
+		"name": "What is his name?",
+		"is_tall": "Is he tall (> 70 inches) ?",
+		"religion": "What's his religion?",
+		"killed": "Was he killed?",
+		"period": "When was he a President?",
+		"party": "What's his party?",
+		"rate": " What's his rate?"
+	},
+
+	"rules":
+	[
+
+		{"conditions": [["religion", "episcopalian"], ["period", "before_1850"]], "result": ["party", "other"]},
+		{"conditions": [["religion", "episcopalian"], ["period", "before_1950"]], "result": ["party", "democratic"]},
+		{"conditions": [["religion", "episcopalian"], ["period", "before_2050"]], "result": ["party", "republican"]},
+		{"conditions": [["religion", "other"], ["period", "before_1850"]], "result": ["party", "other"]},
+		{"conditions": [["religion", "other"], ["period", "before_1900"]], "result": ["party", "republican"]},
+		{"conditions": [["religion", "other"], ["period", "before_2000"]], "result": ["party", "democratic"]},
+		{"conditions": [["religion", "presbyterian"], ["period", "before_1850"]], "result": ["party", "democratic"]},
+		{"conditions": [["religion", "presbyterian"], ["period", "before_1900"]], "result": ["party", "democratic"]},
+		{"conditions": [["religion", "presbyterian"], ["period", "before_1950"]], "result": ["party", "democratic"]},
+		{"conditions": [["religion", "presbyterian"], ["period", "before_2000"]], "result": ["party", "republican"]},
+		{"conditions": [["religion", "presbyterian"], ["period", "before_2050"]], "result": ["party", "republican"]},
+
+
+		{"conditions": [["party", "democratic"], ["is_tall", "False"], ["rate", "4"], ["religion", "other"], ["period", "before_1950"], ["killed", "False"]], "result": ["name", "Harry Truman"]},
+		{"conditions": [["party", "republican"], ["is_tall", "False"], ["rate", "4"], ["religion", "other"], ["period", "before_1950"], ["killed", "False"]], "result": ["name", "Theodore Roosevelt"]},
+		{"conditions": [["party", "democratic"], ["is_tall", "False"], ["rate", "3"], ["religion", "presbyterian"], ["period", "before_1850"], ["killed", "False"]], "result": ["name", "James Polk"]},
+		{"conditions": [["party", "republican"], ["is_tall", "False"], ["rate", "3"], ["religion", "presbyterian"], ["period", "before_2000"], ["killed", "False"]], "result": ["name", "Dwight Eisenhower"]},
+		{"conditions": [["party", "other"], ["is_tall", "True"], ["rate", "3"], ["religion", "episcopalian"], ["period", "before_1850"], ["killed", "False"]], "result": ["name", "James Monroe"]},
+		{"conditions": [["party", "other"], ["is_tall", "True"], ["rate", "5"], ["religion", "episcopalian"], ["period", "before_1850"], ["killed", "False"]], "result": ["name", "George Washington"]},
+		{"conditions": [["party", "democratic"], ["is_tall", "True"], ["rate", "5"], ["religion", "episcopalian"], ["period", "before_1950"], ["killed", "False"]], "result": ["name", "Franklin Roosevelt"]},
+		{"conditions": [["party", "republican"], ["is_tall", "True"], ["rate", "3"], ["religion", "episcopalian"], ["period", "before_2050"], ["killed", "False"]], "result": ["name", "George Bush I"]},
+		{"conditions": [["party", "other"], ["is_tall", "True"], ["rate", "5"], ["religion", "other"], ["period", "before_1850"], ["killed", "False"]], "result": ["name", "Thomas Jefferson"]},
+		{"conditions": [["party", "democratic"], ["is_tall", "True"], ["rate", "3"], ["religion", "other"], ["period", "before_2000"], ["killed", "False"]], "result": ["name", "Lyndon Johnson"]},
+		{"conditions": [["party", "republican"], ["is_tall", "True"], ["rate", "3"], ["religion", "other"], ["period", "before_2050"], ["killed", "False"]], "result": ["name", "George Bush II"]},
+		{"conditions": [["party", "republican"], ["is_tall", "True"], ["rate", "3"], ["religion", "other"], ["period", "before_1900"], ["killed", "True"]], "result": ["name", "James Garfield"]},
+		{"conditions": [["party", "republican"], ["is_tall", "True"], ["rate", "5"], ["religion", "other"], ["period", "before_1900"], ["killed", "True"]], "result": ["name", "Abraham Lincoln"]},
+		{"conditions": [["party", "democratic"], ["is_tall", "True"], ["rate", "3"], ["religion", "other"], ["period", "before_2000"], ["killed", "True"]], "result": ["name", "John Kennedy"]},
+		{"conditions": [["party", "democratic"], ["is_tall", "True"], ["rate", "4"], ["religion", "presbyterian"], ["period", "before_1850"], ["killed", "False"]], "result": ["name", "Andrew Jackson"]},
+		{"conditions": [["party", "democratic"], ["is_tall", "True"], ["rate", "3"], ["religion", "presbyterian"], ["period", "before_1900"], ["killed", "False"]], "result": ["name", "Grover Cleveland"]},
+		{"conditions": [["party", "democratic"], ["is_tall", "True"], ["rate", "4"], ["religion", "presbyterian"], ["period", "before_1950"], ["killed", "False"]], "result": ["name", "Woodrow Wilson"]},
+		{"conditions": [["party", "republican"], ["is_tall", "True"], ["rate", "3"], ["religion", "presbyterian"], ["period", "before_2050"], ["killed", "False"]], "result": ["name", "Donald Trump"]}
+	]
+}

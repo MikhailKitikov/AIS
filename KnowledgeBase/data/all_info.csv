@@ -1,0 +1,25 @@
+,name,is_tall,religion,killed,period,party,rate
+0,George Washington,True,episcopalian,False,before_1850,other,5
+1,John Adams,False,other,False,before_1850,other,3
+2,Thomas Jefferson,True,other,False,before_1850,other,5
+3,James Madison,False,episcopalian,False,before_1850,other,3
+4,James Monroe,True,episcopalian,False,before_1850,other,3
+5,John Quincy Adams,False,other,False,before_1850,other,3
+6,Andrew Jackson,True,presbyterian,False,before_1850,democratic,4
+8,William Harrison,False,episcopalian,False,before_1850,other,3
+10,James Polk,False,presbyterian,False,before_1850,democratic,3
+15,Abraham Lincoln,True,other,True,before_1900,republican,5
+19,James Garfield,True,other,True,before_1900,republican,3
+21,Grover Cleveland,True,presbyterian,False,before_1900,democratic,3
+24,Theodore Roosevelt,False,other,False,before_1950,republican,4
+26,Woodrow Wilson,True,presbyterian,False,before_1950,democratic,4
+30,Franklin Roosevelt,True,episcopalian,False,before_1950,democratic,5
+31,Harry Truman,False,other,False,before_1950,democratic,4
+32,Dwight Eisenhower,False,presbyterian,False,before_2000,republican,3
+33,John Kennedy,True,other,True,before_2000,democratic,3
+34,Lyndon Johnson,True,other,False,before_2000,democratic,3
+39,George Bush I,True,episcopalian,False,before_2050,republican,3
+40,Bill Clinton,True,other,False,before_2050,democratic,3
+41,George Bush II,True,other,False,before_2050,republican,3
+42,Barack Obama,True,other,False,before_2050,democratic,3
+43,Donald Trump,True,presbyterian,False,before_2050,republican,3
